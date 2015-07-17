@@ -6,10 +6,17 @@ namespace cheers
 	{
 		public static void Main (string[] args)
 		{
-			string name ="Bob"
-				
-			Console.WriteLine ("Go");
+			Console.Write ("What is your name?");
 
+			string name = "Bob";
+			Console.WriteLine (name + " is.. Grand");
+			string[] words = name.Split(name);
+			System.Console.WriteLine("{0} letters in name:", name.Length);
+
+			foreach (string s in name)
+			{
+				System.Console.WriteLine(s);
+			}
 		}
 	}
 }
@@ -27,5 +34,4 @@ Give me an.. o
 Give me a.. b
 BOB is.. GRAND!
 ```
-adding text to test git
 */
