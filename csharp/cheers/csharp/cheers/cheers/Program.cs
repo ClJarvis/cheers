@@ -6,13 +6,13 @@ namespace cheers
 	{
 		public static void Main (string[] args)
 
-	//	name[] delimitername = { ' ', ',', '.', ':', '\t' };
+	//	user input name
 		{
 			Console.WriteLine ("What is your name?");
-			var response = Console.ReadLine(); //change string to var
+			var response = Console.ReadLine(); //changed string to var
 			var halfnorsemix = "HALFNORSEMIX";
 			string upperResponse = response.ToUpper();
-			//changed to char cannot convert string to char
+
 			foreach (var c in upperResponse)
 			{
 				if (halfnorsemix.IndexOf(c)!=-1)
@@ -22,16 +22,11 @@ namespace cheers
 				else Console.WriteLine("Give me a {0}", c);
 
 			}
-				//now prints your name is grand x times x=name.length cannot ge cheer to print
 			Console.WriteLine (response + " is.. Grand");
-
-		//	string[] words = response.Split(response);
-			//unneeded
-			//System.Console.WriteLine("{0} letters in", + response.Length);
 
 
 			{
-			//	System.Console.WriteLine("Give me a.. "+ c);
+
 			}
 		}
 	}
@@ -41,15 +36,26 @@ namespace cheers
 
 
 /*### What to Implement
-1. Getting user's name and print it.
-2. Cheer the user on.
+What to Implement
 
-For example, if name is "Bob", output should be:
+After your user enters their name, your program should ask for their birthdate.
+After the cheer, your program should tell the user how many more days there are until their next birthday.
+The user should only have to under the Day and Month
+THe final version of your app should work like the following:
 
-```shell
+What's your name?
+> Bob
+What's your birthday?
+> 10/19
+
 Give me a.. b
 Give me an.. o
 Give me a.. b
 BOB is.. GRAND!
+
+Your today is _____ days away!
+If the person's birthday is that day your program should say:
+
+Happy Birthday!!
 ```
 */
