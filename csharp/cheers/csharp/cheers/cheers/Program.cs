@@ -9,16 +9,29 @@ namespace cheers
 	//	name[] delimitername = { ' ', ',', '.', ':', '\t' };
 		{
 			Console.WriteLine ("What is your name?");
-			string response = Console.ReadLine();
-
-			//string name = "Chris";
-			Console.WriteLine (response + " is.. Grand");
-		//string[] words = name.Split(name);
-			System.Console.WriteLine("{0} letters in", + response.Length);
-
-		//	foreach (string s in name)
+			var response = Console.ReadLine(); //change string to var
+			var halfnorsemix = "HALFNORSEMIX";
+			string upperResponse = response.ToUpper();
+			//changed to char cannot convert string to char
+			foreach (var c in upperResponse)
 			{
-			//	System.Console.WriteLine("Give me a.. "+ s);
+				if (halfnorsemix.IndexOf(c)!=-1)
+				{
+					Console.WriteLine("Give me an {0}", c);
+				}
+				else Console.WriteLine("Give me a {0}", c);
+
+			}
+				//now prints your name is grand x times x=name.length cannot ge cheer to print
+			Console.WriteLine (response + " is.. Grand");
+
+		//	string[] words = response.Split(response);
+			//unneeded
+			//System.Console.WriteLine("{0} letters in", + response.Length);
+
+
+			{
+			//	System.Console.WriteLine("Give me a.. "+ c);
 			}
 		}
 	}
