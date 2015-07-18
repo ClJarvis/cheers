@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Text;
+using System.Linq;
+using System.Windows;
+using System.IO;
+
 
 namespace cheers
 {
@@ -6,12 +11,28 @@ namespace cheers
 	{
 		public static void Main (string[] args)
 
-	//	user input name
+	//	user inputs name
 		{
 			Console.WriteLine ("What is your name?");
-			var response = Console.ReadLine(); //changed string to var
-			var halfnorsemix = "HALFNORSEMIX";
+			string response = Console.ReadLine(); //changed string to var
+			string halfnorsemix = "HALFNORSEMIX";
 			string upperResponse = response.ToUpper();
+
+	// User enter birthdate
+
+			Console.WriteLine ("What's your Birthday? mm/dd");	
+			string bDay = Console.ReadLine();
+			DateTime today = DateTime.Now;
+			DateTime userBday = Convert.ToDateTime(bDay);
+
+			TimeSpan bDayCalc;
+			if (userBday > today) {
+				bDayCalc = userBday - today;
+			} else 
+			{
+				bDayCalc = today - userBday;
+			}
+			int differenceInDays = bDayCalc.Days;
 
 			foreach (var c in upperResponse)
 			{
@@ -23,10 +44,12 @@ namespace cheers
 
 			}
 			Console.WriteLine (response + " is.. Grand");
+			Console.WriteLine (" ");
+			Console.Write ("Your Birthday is  {0} days away", differenceInDays);
 
 
 			{
-
+				
 			}
 		}
 	}
@@ -53,7 +76,7 @@ Give me an.. o
 Give me a.. b
 BOB is.. GRAND!
 
-Your today is _____ days away!
+Your birthday is _____ days away!
 If the person's birthday is that day your program should say:
 
 Happy Birthday!!
