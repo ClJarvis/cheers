@@ -18,7 +18,7 @@ namespace cheers
 			string halfnorsemix = "HALFNORSEMIX";
 			string upperResponse = response.ToUpper();
 
-	// User enter birthdate
+	// User enters birthdate
 
 			Console.WriteLine ("What's your Birthday? mm/dd");	
 			string bDay = Console.ReadLine();
@@ -26,12 +26,16 @@ namespace cheers
 			DateTime userBday = Convert.ToDateTime(bDay);
 
 			TimeSpan bDayCalc;
-			if (userBday > today) {
-				bDayCalc = userBday - today;
-			} else 
-			{
-				bDayCalc = today - userBday;
-			}
+			if (userBday == today) {
+				//bDayCalc == today;
+				Console.Write ("Happy Birthday!!");
+		}
+				if (userBday > today) {
+					bDayCalc = userBday - today;
+				} else {
+					bDayCalc = today - userBday;
+				}
+	//		}
 			int differenceInDays = bDayCalc.Days;
 
 			foreach (var c in upperResponse)
@@ -45,7 +49,7 @@ namespace cheers
 			}
 			Console.WriteLine (response + " is.. Grand");
 			Console.WriteLine (" ");
-			Console.Write ("Your Birthday is  {0} days away", differenceInDays);
+			Console.Write ("Your Birthday is {0} days away", differenceInDays);
 
 
 			{
