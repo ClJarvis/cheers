@@ -24,19 +24,29 @@ namespace cheers
 			string bDay = Console.ReadLine();
 			DateTime today = DateTime.Now;
 			DateTime userBday = Convert.ToDateTime(bDay);
-
+//			Console.Write (userBday);
+//			Console.Write (today);
+			
 			TimeSpan bDayCalc;
-			if (userBday == today) {
+		//	int differenceInDays = bDayCalc.Days;
+			if (userBday.ToShortDateString() == today.ToShortDateString()) {
+				
+
 				//bDayCalc == today;
 				Console.Write ("Happy Birthday!!");
 		}
-				if (userBday > today) {
+				 if (userBday > today) {
 					bDayCalc = userBday - today;
+				int differenceInDays = bDayCalc.Days;
+					Console.Write ("Your Birthday is {0} days away", differenceInDays);
+
 				} else {
 					bDayCalc = today - userBday;
 				}
+			Console.Write (bDayCalc);
+
 	//		}
-			int differenceInDays = bDayCalc.Days;
+
 
 			foreach (var c in upperResponse)
 			{
@@ -49,7 +59,7 @@ namespace cheers
 			}
 			Console.WriteLine (response + " is.. Grand");
 			Console.WriteLine (" ");
-			Console.Write ("Your Birthday is {0} days away", differenceInDays);
+//			Console.Write ("Your Birthday is {0} days away", differenceInDays);
 
 
 			{
