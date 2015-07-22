@@ -14,7 +14,7 @@ namespace cheers
 	//	user inputs name
 		{
 			Console.WriteLine ("What is your name?");
-			string response = Console.ReadLine(); //changed string to var
+			string response = Console.ReadLine(); 
 			string halfnorsemix = "HALFNORSEMIX";
 			string upperResponse = response.ToUpper();
 
@@ -32,8 +32,9 @@ namespace cheers
 			if (userBday.ToShortDateString() == today.ToShortDateString()) {
 				
 
-				//bDayCalc == today;
+
 				Console.Write ("Happy Birthday!!");
+
 		}
 				 if (userBday > today) {
 					bDayCalc = userBday - today;
@@ -41,13 +42,17 @@ namespace cheers
 					Console.Write ("Your Birthday is {0} days away", differenceInDays);
 
 				} else {
-					bDayCalc = today - userBday;
+		//		TimeSpan daysInYear = TimeSpan.FromDays (365);
+				 bDayCalc = today - userBday;
+				int differenceInDays =  bDayCalc.Days + 365;
+				Console.Write ("Your Birthday is {0} days away", differenceInDays);
+
 				}
-			Console.Write (bDayCalc);
+	
 
 	//		}
 
-
+			Console.WriteLine (" ");
 			foreach (var c in upperResponse)
 			{
 				if (halfnorsemix.IndexOf(c)!=-1)
@@ -57,8 +62,9 @@ namespace cheers
 				else Console.WriteLine("Give me a {0}", c);
 
 			}
-			Console.WriteLine (response + " is.. Grand");
 			Console.WriteLine (" ");
+			Console.WriteLine (response + " is.. Grand");
+
 //			Console.Write ("Your Birthday is {0} days away", differenceInDays);
 
 
